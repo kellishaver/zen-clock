@@ -14,21 +14,6 @@ setInterval(function() {
   document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
 }, 1000);
 
-bgAudio = new Audio('./audio/loop.mp3'); 
-bgAudio.addEventListener('ended', function() {
-    this.currentTime = 0;
-    this.play();
-}, false);
-bgAudio.play();
-
-document.body.addEventListener("click", function(e) {
-  if(bgAudio.paused) {
-    bgAudio.play();        
-  } else {
-    bgAudio.pause();        
-  }
-});
-
 setTimeout(function() {
   document.getElementById("instructions").style.opacity = 0;
 }, 3000);
@@ -36,3 +21,40 @@ setTimeout(function() {
 setTimeout(function() {
   document.getElementById("time").style.opacity = 0.5;
 }, 1000);
+
+bgAudio = new Audio('./audio/loop.mp3'); 
+bgAudio.volume = 0;
+
+bgAudio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+bgAudio.play();
+fadeIn();
+
+function fadeIn() {
+  setTimeout(function() {
+    if((bgAudio.volume + 0.01) <= 1) {
+      bgAudio.volume += 0.01;
+      fadeIn();
+    } else {
+      bgAudio.volume = 1;
+    }
+  }, 20);
+}
+
+function fadeOut() {
+  setTimeout(function() {
+    if((bgAudio.volume - 0.01) > 0) {
+      bgAudio.volume -= 0.01;
+      fadeOut();
+    } else {
+      bgAudio.volume = 0;
+    }
+  }, 20);
+}
+
+document.body.addEventListener("click", function(e) {
+  (bgAudio.volume > 0) ? fadeOut() : fadeIn();
+});
