@@ -7,6 +7,24 @@ body {
   transition: background-color 1000ms linear;
 }
 
+#credit {
+  background:#000;
+  color:#fff;
+  bottom:0;
+  font-family:helvetica, arial, sans-serif;
+  font-size:11px;
+  left:0;
+  opacity:0;
+  padding:1em;
+  position:absolute;
+  right:0;
+  text-align:center;
+}
+
+#credit a {
+  color:#fff;
+}
+
 #instructions {
   background:#000;
   -moz-border-radius:0.25em;
@@ -46,7 +64,7 @@ body {
   width:200px;
 }
 
-#instructions, #time {
+#credit, #instructions, #time {
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -o-transition: all 500ms ease;

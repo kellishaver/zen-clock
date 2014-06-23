@@ -55,6 +55,22 @@ function fadeOut() {
   }, 20);
 }
 
-document.body.addEventListener("click", function(e) {
+document.getElementById("time").addEventListener("click", function(e) {
+  if(bgAudio.paused) {
+    bgAudio.play();
+    fadeIn();
+  }
   (bgAudio.volume > 0) ? fadeOut() : fadeIn();
+});
+document.getElementById("time").addEventListener("mouseover", function(e) {
+  document.getElementById("credit").style.opacity = 0.5;
+});
+document.getElementById("time").addEventListener("mouseout", function(e) {
+  document.getElementById("credit").style.opacity = 0;
+});
+document.getElementById("credit").addEventListener("mouseover", function(e) {
+  document.getElementById("credit").style.opacity = 0.5;
+});
+document.getElementById("credit").addEventListener("mouseout", function(e) {
+  document.getElementById("credit").style.opacity = 0;
 });
