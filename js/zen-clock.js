@@ -17,7 +17,9 @@ setInterval(function() {
 
   if(d.getSeconds() == 1 && setSeconds == false) {
     var sh = document.getElementById("second");
+    sh.style.mozAnimationName = "spin";
     sh.style.webkitAnimationName = "spin";
+    sh.style.animationName = "spin";
     sh.style.opacity = 1;
     document.getElementById("track").style.borderColor = 'rgb(0, 0, 0)';
     setSeconds = true;
