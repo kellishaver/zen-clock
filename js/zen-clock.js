@@ -76,6 +76,13 @@ document.getElementById("time").addEventListener("click", function(e) {
   }
   (bgAudio.volume > 0) ? fadeOut() : fadeIn();
 });
+document.getElementById("track").addEventListener("click", function(e) {
+  if(bgAudio.paused) {
+    bgAudio.play();
+    fadeIn();
+  }
+  (bgAudio.volume > 0) ? fadeOut() : fadeIn();
+});
 document.getElementById("time").addEventListener("mouseover", function(e) {
   document.getElementById("credit").style.opacity = 0.5;
 });
