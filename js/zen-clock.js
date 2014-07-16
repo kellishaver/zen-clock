@@ -83,10 +83,10 @@ document.getElementById("track").addEventListener("click", function(e) {
   }
   (bgAudio.volume > 0) ? fadeOut() : fadeIn();
 });
-document.getElementById("time").addEventListener("mouseover", function(e) {
+document.getElementById("track").addEventListener("mouseover", function(e) {
   document.getElementById("credit").style.opacity = 0.5;
 });
-document.getElementById("time").addEventListener("mouseout", function(e) {
+document.getElementById("track").addEventListener("mouseout", function(e) {
   document.getElementById("credit").style.opacity = 0;
 });
 document.getElementById("credit").addEventListener("mouseover", function(e) {
