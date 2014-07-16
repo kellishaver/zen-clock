@@ -44,8 +44,8 @@ bgAudio.addEventListener('ended', function() {
     this.play();
 }, false);
 
-//bgAudio.play();
-//fadeIn();
+bgAudio.play();
+fadeIn();
 
 function fadeIn() {
   setTimeout(function() {
