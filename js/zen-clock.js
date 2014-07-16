@@ -15,16 +15,14 @@ setInterval(function() {
   document.getElementById("second").style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
   document.getElementById("time").innerHTML = hour + ":" + min;
 
-
   if(d.getSeconds() == 1 && setSeconds == false) {
     var sh = document.getElementById("second");
     sh.style.webkitAnimationName = "spin";
+    sh.style.opacity = 1;
+    document.getElementById("track").style.borderColor = 'rgb(0, 0, 0)';
     setSeconds = true;
-
-    setTimeout(function() {
-      document.getElementById("second").style.opacity = 1;
-    }, 1000);
   }
+
 }, 1000);
 
 setTimeout(function() {

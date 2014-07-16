@@ -94,6 +94,12 @@ body {
   width:160px;
 }
 
+#credit, #instructions, #second, #time, #track {
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
 #second {
   border-radius:100%;
   content: '';
@@ -102,7 +108,7 @@ body {
   height:10px;
   margin-top:-90px;
   opacity:0;
-  background:#fff;
+  background:#000;
   position:absolute;
   top:50%;
   left:50%;
@@ -116,16 +122,5 @@ body {
   animation-duration: 60000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-
-  -webkit-transition: background 500ms ease;
-  -moz-transition: background 500ms ease;
-  -o-transition: background 500ms ease;
-  -ms-transition: background 500ms ease;
-  transition: background 500ms ease;
 }
 
-#credit, #instructions, #time, #track {
-  -webkit-transition: all 500ms ease;
-  -moz-transition: all 500ms ease;
-  transition: all 500ms ease;
-}
