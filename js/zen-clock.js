@@ -1,3 +1,4 @@
+var setSeconds = false;
 setInterval(function() {
   var d = new Date();
   var t = d.getTime().toString();
@@ -11,7 +12,19 @@ setInterval(function() {
   var b = Math.ceil(sec * 4.25);
 
   document.body.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
-  document.getElementById("time").innerHTML = hour + ":" + min + ":" + sec;
+  document.getElementById("second").style.backgroundColor = 'rgb('+r+', '+g+', '+b+')';
+  document.getElementById("time").innerHTML = hour + ":" + min;
+
+
+  if(d.getSeconds() == 1 && setSeconds == false) {
+    var sh = document.getElementById("second");
+    sh.style.webkitAnimationName = "spin";
+    setSeconds = true;
+
+    setTimeout(function() {
+      document.getElementById("second").style.opacity = 1;
+    }, 1000);
+  }
 }, 1000);
 
 setTimeout(function() {
@@ -20,6 +33,7 @@ setTimeout(function() {
 
 setTimeout(function() {
   document.getElementById("time").style.opacity = 0.5;
+  document.getElementById("track").style.opacity = 0.3;
 }, 1000);
 
 bgAudio = new Audio('./audio/loop.mp3'); 
@@ -30,8 +44,8 @@ bgAudio.addEventListener('ended', function() {
     this.play();
 }, false);
 
-bgAudio.play();
-fadeIn();
+//bgAudio.play();
+//fadeIn();
 
 function fadeIn() {
   setTimeout(function() {

@@ -1,9 +1,20 @@
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); -moz-transform-origin: 0 90px; }
+  to { -moz-transform: rotate(360deg); -moz-transform-origin: 0 90px; }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); -webkit-transform-origin: 0 90px; }
+  to { -webkit-transform: rotate(360deg); -webkit-transform-origin: 0 90px; }
+}
+@keyframes spin {
+  from {transform:rotate(0deg); transform-origin: 0 90px; }
+  to {transform:rotate(360deg); transform-origin: 0 90px; }
+}
+
 body {
   background:#000;
   -webkit-transition: background-color 1000ms linear;
   -moz-transition: background-color 1000ms linear;
-  -o-transition: background-color 1000ms linear;
-  -ms-transition: background-color 1000ms linear;
   transition: background-color 1000ms linear;
 }
 
@@ -64,10 +75,57 @@ body {
   width:200px;
 }
 
-#credit, #instructions, #time {
+
+#track {
+  background:none;
+  -moz-border-radius:100%;
+  -webkit-border-radius:100%;
+  border-radius:100%;
+  border:10px solid #000;
+  color:#fff;
+  height:160px;
+  line-height:200px;
+  left:50%;
+  margin:-90px 0 0 -90px;
+  opacity:0;
+  position:absolute;
+  text-align:center;
+  top:50%;
+  width:160px;
+}
+
+#second {
+  border-radius:100%;
+  content: '';
+  display:block;
+  width:10px;
+  height:10px;
+  margin-top:-90px;
+  opacity:0;
+  background:#fff;
+  position:absolute;
+  top:50%;
+  left:50%;
+
+  -webkit-animation-duration: 60000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-duration: 60000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  animation-duration: 60000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  -webkit-transition: background 500ms ease;
+  -moz-transition: background 500ms ease;
+  -o-transition: background 500ms ease;
+  -ms-transition: background 500ms ease;
+  transition: background 500ms ease;
+}
+
+#credit, #instructions, #time, #track {
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
-  -o-transition: all 500ms ease;
-  -ms-transition: all 500ms ease;
   transition: all 500ms ease;
 }
